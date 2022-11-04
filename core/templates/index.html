@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% for post in posts %}
+<div class="card">
+    <h2>Post</h2>
+    <hr>
+    <div class="card-info">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.body }}</p>
+        <div class="a-link">
+            <a href="{{ url_for('post', id=post.id) }}">Читать далее...</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}

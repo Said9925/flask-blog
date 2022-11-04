@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="profile">
+    <form action="{{ url_for('registration') }}" method="post"><br>
+        <input type="text" name='username' placeholder="Username"><br><br>
+        <input type="password" name="password" placeholder="Password"><br><br>
+        <button>Зарегистрироваться</button>
+    </form>
+</div>
+
+
+
+
+{% endblock %}

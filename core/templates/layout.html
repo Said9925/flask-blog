@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Tech</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="contner">
+                <a href="{{url_for('index')}}" class="logo">Dev Tech</a>
+                <ul class="navbar-menu">
+                    {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('profile') }}">Профиль</a></li>
+                    <li><a href="{{ url_for('new_post') }}">Новый пост</a></li>
+                    <li><a href="{{ url_for('logout') }}">Выйти</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('login') }}">Войти</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+       {% for message in messages %}
+          {{ message }}
+       {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% block content %} {% endblock %}
+
+</body>
+</html>

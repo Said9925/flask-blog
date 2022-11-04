@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="post-info">
+    <span>{{ post.author }}</span>
+    <hr>
+    <h1>{{ post.title}}</h1>
+    <p>{{ post.body}}</p>
+    {% if current_user == post.author %}
+    <a href="{{ url_for('post_delete', id=post.id) }}">Удалить Пост</a>
+    {% endif %}
+    <br><br>
+</div>
+
+
+{% endblock %}
