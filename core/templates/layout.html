@@ -20,6 +20,9 @@
                     {% else %}
                     <li><a href="{{ url_for('login') }}">Войти</a></li>
                     {% endif %}
+                    {% if current_user.username == "admin" %}
+                    <li><a href="{{ url_for('profile') }}">Админ</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>

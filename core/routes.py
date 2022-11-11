@@ -28,7 +28,8 @@ def post_delete(id):
 
 @app.route('/profile')
 def profile():
-    return render_template('profile.html')
+    username = current_user.username
+    return render_template('profile.html', username = username)
 
 
 
