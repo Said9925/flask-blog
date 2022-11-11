@@ -4,7 +4,7 @@ from flask_login import login_user, logout_user, current_user
 from core import app, db
 from core.models import User, Post
 
-
+    
 
 @app.route('/')
 def index():
