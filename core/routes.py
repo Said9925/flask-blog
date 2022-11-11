@@ -82,8 +82,5 @@ def registration():
         db.session.commit()
         return redirect(url_for('login'))
     return render_template('registration.html')
-<<<<<<< HEAD
-=======
-
 print()
->>>>>>> 8d95a99894710c57cab8b0bc39b38e129490c2f8
+
