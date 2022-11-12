@@ -29,11 +29,12 @@ def post_delete(id):
 @app.route('/profile')
 def profile():
     # author = User.query.get(current_user.id)
-    posts = current_user.posts
-    username = current_user.username
-    ids = current_user.get_id
-    print(ids)
-    return render_template('profile.html', username = username, len_posts=len(posts))
+    if current_user.is_authenticated:
+        username = current_user.username
+        posts = current_user.posts
+        return render_template('profile.html', username = username, len_posts=len(posts))
+    else:
+        return redirect(url_for('index'))
 
 
 
