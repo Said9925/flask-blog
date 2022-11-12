@@ -40,14 +40,18 @@ def profile():
 
 @app.route('/new_post', methods=['GET', 'POST'])
 def new_post():
-    if request.method == 'POST':
-        title = request.form.get('title')
-        body = request.form.get('body')
-        post = Post(title=title, body=body, author_id=current_user.id)
-        db.session.add(post)
-        db.session.commit()
+    if current_user.is_authenticated:
+        if request.method == 'POST':
+            title = request.form.get('title')
+            body = request.form.get('body')
+            post = Post(title=title, body=body, author_id=current_user.id)
+            db.session.add(post)
+            db.session.commit()
+            return redirect(url_for('index'))
+        return render_template('new_post.html')
+    else:
         return redirect(url_for('index'))
-    return render_template('new_post.html')
+    
 
 
 @app.route('/login', methods=['GET', 'POST'])
