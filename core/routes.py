@@ -8,7 +8,7 @@ from core.models import User, Post
 
 @app.route('/')
 def index():
-    posts = Post.query.all()
+    posts = Post.query.order_by(Post.id.desc()).all()
     return render_template("index.html", posts=posts)
 
 
@@ -31,6 +31,8 @@ def profile():
     # author = User.query.get(current_user.id)
     posts = current_user.posts
     username = current_user.username
+    ids = current_user.get_id
+    print(ids)
     return render_template('profile.html', username = username, len_posts=len(posts))
 
 
