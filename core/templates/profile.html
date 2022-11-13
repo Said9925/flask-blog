@@ -7,7 +7,9 @@
     <div class="profile-info">
         <span>{{len_posts}} - Публикаций</span>
         <hr>
-        <p>Content</p>
+        {% for post in post_name %}
+        <p>{{ post }}</p>
+        {% endfor %}
         <br>
     </div>
 </div>

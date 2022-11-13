@@ -23,6 +23,6 @@ class Post(db.Model):
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     def __str__(self) -> str:
-        return self.username
+        return self.title
 
     
