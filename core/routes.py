@@ -93,3 +93,14 @@ def registration():
         return redirect(url_for('login'))
     return render_template('registration.html')
 
+@app.route('/admin')
+def admin():
+    users = User.query.all()
+    return render_template('admin.html', users=users)
+
+@app.route('/info_user/<int:id>')
+def info_user(id):
+    user = User.query.get(id)
+    post_name = Post.query.filter_by(author_id=id).all()
+    posts = user.posts
+    return render_template('info_user.html', user=user, post_name=post_name, len_posts=len(posts))

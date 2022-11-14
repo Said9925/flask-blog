@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Info</h2>
+<p>{{ user.id }}</p>
+<p>{{ user.username}}</p>
+<p>{{ user.password }}</p>
+<p>Публикаций - {{len_posts}}</p>
+<h2>Посты</h2>
+{% for post in post_name%}
+<p>{{post}}</p>
+{% endfor %}
+
+{% endblock %}

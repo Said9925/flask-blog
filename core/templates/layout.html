@@ -21,7 +21,7 @@
                     <li><a href="{{ url_for('login') }}">Войти</a></li>
                     {% endif %}
                     {% if current_user.username == "admin" %}
-                    <li><a href="{{ url_for('profile') }}">Админ</a></li>
+                    <li><a href="{{ url_for('admin') }}">Админ</a></li>
                     {% endif %}
                 </ul>
             </div>
