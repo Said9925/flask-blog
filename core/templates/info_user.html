@@ -3,10 +3,10 @@
 {% block content %}
 
 <h2>Info</h2>
-<p>{{ user.id }}</p>
-<p>{{ user.username}}</p>
-<p>{{ user.password }}</p>
-<p>Публикаций - {{len_posts}}</p>
+<span>ID - {{ user.id }}|</span>
+<span>Username - {{ user.username}}|</span>
+<span>Password - {{ user.password }}|</span>
+<span>Публикаций - {{len_posts}}</span>
 <h2>Посты</h2>
 {% for post in post_name%}
 <p>{{post}}</p>
