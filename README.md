@@ -4,16 +4,16 @@
 
 
 ---
-## В приложении есть возможность:
-- зарегистрироваться
-- публиковать свои посты а также их удалять
-- читать посты других пользователей
+## Функции
+- вхою/регистрация
+- добавление/удаление постов
+- CRUD
 
 
 ![Alt-текст](core/static/img/my_blog.PNG)
 
 ---
-## Language and tools
+## Языки и инструменты использованные в данном проекте:
 
 ![Python](https://img.shields.io/badge/-Python-306998?style=for-the-badge&logo=python&logoColor=ffdc29)
 ![Flask](https://img.shields.io/badge/-Flask-101010?style=for-the-badge&logo=flask)
